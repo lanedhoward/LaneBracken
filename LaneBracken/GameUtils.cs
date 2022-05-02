@@ -43,6 +43,8 @@ namespace LaneBracken
                         if (double.TryParse(entity.GetAttribute("minEatChance"), out double b)) { cons.minEatChance = b; }
                         if (int.TryParse(entity.GetAttribute("daysToReproductionMax"), out int c)) { cons.DaysToReproductionMax = c; }
                         if (double.TryParse(entity.GetAttribute("reproductionRatio"), out double d)) { cons.ReproductionRatio = d; }
+                        if (bool.TryParse(entity.GetAttribute("isFlying"), out bool e)) { cons.isFlying = e; }
+                        if (bool.TryParse(entity.GetAttribute("makesGuano"), out bool f)) { cons.makesGuano = f; }
 
                     }
                     else if (entity.GetAttribute("type") == "Decomposer")

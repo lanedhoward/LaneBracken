@@ -59,10 +59,14 @@
     <Compile Include="Entity.cs" />
     <Compile Include="GameUtils.cs" />
     <Compile Include="INameSearchable.cs" />
+    <Compile Include="WeatherMachine.cs" />
     <Compile Include="ISayable.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Producer.cs" />
+    <Compile Include="Insecticide.cs" />
+    <Compile Include="Miner.cs" />
+    <Compile Include="Scarecrow.cs" />
     <Compile Include="World.cs" />
     <Compile Include="WPFUtils.cs" />
     <Page Include="MainWindow.xaml">

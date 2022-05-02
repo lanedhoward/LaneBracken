@@ -15,9 +15,30 @@ namespace LaneBracken
         public int DaysToReproduction = -100;
         public int DaysToReproductionMax;
         public double ReproductionRatio; // ratio how many consumers before and after reproduction
+        public bool isFlying = false;
+        public bool AffectedByScarecrow = false;
+        public bool makesGuano = false;
 
         public void Eat()
         {
+            if (isFlying)
+            {
+                bool raining = (World.GetWorld().TodaysWeather == Weather.Rain);
+                if (raining)
+                {
+                    Say("It is more difficult to fly and hunt in the rain.");
+                    DailyEfficiency = 0.75;
+                }
+                else
+                {
+                    DailyEfficiency = 1.0;
+                }
+                if (AffectedByScarecrow)
+                {
+                    DailyEfficiency *= 0.9;
+                    Say("We are too scared to hunt effectively.");
+                }
+            }
             if (GameUtils.SearchListByName(Diet, World.GetWorld().Entities, out Entity food))
             {
                 // eatPercent is a value between minEatChance and 1
@@ -33,6 +54,7 @@ namespace LaneBracken
                     Amount = amountEating; //only those who ate survive
 
                     Say("Ate " + amountOfFoodNeeded + " " + Diet + ", feeding " + Amount + " " + Name + ".");
+
                 }
                 else
                 {
@@ -55,6 +77,29 @@ namespace LaneBracken
                     }
                 }
 
+                if (Amount > 0 && makesGuano)
+                {
+                    int guanoAmount = (int)Math.Ceiling(Amount * 0.5);
+                    Say("Made " + guanoAmount + " guano.");
+                    MakeGuano(guanoAmount);
+
+                }
+
+            }
+        }
+
+        private void MakeGuano(int amt)
+        {
+            if (GameUtils.SearchListByName("Guano", World.GetWorld().player.Inventory, out Item item))
+            {
+                item.Amount += amt;
+            }
+            else
+            {
+                Item guano = new Item();
+                guano.Name = "Guano";
+                guano.Amount = amt;
+                World.GetWorld().player.Inventory.Add(guano);
             }
         }
 
@@ -64,7 +109,7 @@ namespace LaneBracken
 
             DaysToReproduction -= 1;
 
-            Say("Days till reproduction: " + Math.Max(DaysToReproduction, 0).ToString());
+            //Say("Days till reproduction: " + Math.Max(DaysToReproduction, 0).ToString());
 
             if (DaysToReproduction <= 0)
             {

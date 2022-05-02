@@ -18,10 +18,10 @@
         <TextBlock Margin="480,73,0,0" TextWrapping="Wrap" Text="Cotton" VerticalAlignment="Top" Background="White" HorizontalAlignment="Left" Width="71" TextAlignment="Center" FontSize="14"/>
         <Button x:Name="buttonBuyCotton" Content="Buy Seeds" HorizontalAlignment="Left" Margin="559,73,0,0" VerticalAlignment="Top" Width="110"/>
         <Button x:Name="buttonSellCotton" Content="Sell Product" HorizontalAlignment="Left" Margin="674,73,0,0" VerticalAlignment="Top" Width="110"/>
-        <Button x:Name="buttonBuyScarecrow" Content="Buy Scarecrow" HorizontalAlignment="Left" Margin="480,111,0,0" VerticalAlignment="Top" Width="140" Height="57"/>
-        <Button x:Name="buttonBuyInsecticide" Content="Buy Insecticide" Margin="644,111,9.6,0" VerticalAlignment="Top" Height="57"/>
-        <Button x:Name="buttonBuyMiners" Content="Hire Guano Miners" HorizontalAlignment="Left" Margin="480,182,0,0" VerticalAlignment="Top" Width="140" Height="57"/>
-        <Button x:Name="buttonBuyWeatherMachine" Content="Use Weather Machine" Margin="644,182,9.6,0" VerticalAlignment="Top" Height="57"/>
+        <Button x:Name="buttonBuyScarecrow" Content="Buy Scarecrow" HorizontalAlignment="Left" Margin="480,111,0,0" VerticalAlignment="Top" Width="140" Height="57" Click="buttonBuyScarecrow_Click"/>
+        <Button x:Name="buttonBuyInsecticide" Content="Buy Insecticide" Margin="644,111,9.6,0" VerticalAlignment="Top" Height="57" Click="buttonBuyInsecticide_Click"/>
+        <Button x:Name="buttonBuyMiners" Content="Hire Guano Miners" HorizontalAlignment="Left" Margin="480,182,0,0" VerticalAlignment="Top" Width="140" Height="57" Click="buttonBuyMiners_Click"/>
+        <Button x:Name="buttonBuyWeatherMachine" Content="Use Weather Machine" Margin="644,182,9.6,0" VerticalAlignment="Top" Height="57" Click="buttonBuyWeatherMachine_Click"/>
 
     </Grid>
 </Window>

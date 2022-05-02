@@ -21,9 +21,15 @@ namespace LaneBracken
 
         public static World instance = null;
 
+        public int Day;
+
+        public bool WeatherMachineOn = false;
+
+
         private World()
         {
             TodaysWeather = Weather.Sun;
+            Day = 0;
 
             Entities = GameUtils.LoadEntities("../../data/gamedata.xml");
 
@@ -43,11 +49,20 @@ namespace LaneBracken
 
         public void Step()
         {
+            Day += 1;
+            Say("********** The sun rises on day " + Day + "! **********");
 
-            Say("********** It is a new day! **********");
+            // do item steps
+            foreach (Item item in player.Inventory)
+            {
+                if (item.HasStep) item.Step();
+            }
 
             // decide weather
-            SetWeather();
+            if (!WeatherMachineOn)
+            {
+                SetWeather();
+            }
             switch (TodaysWeather)
             {
                 case Weather.Rain:
