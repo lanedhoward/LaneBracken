@@ -107,5 +107,8 @@
   <ItemGroup>
     <Resource Include="notes.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="data\gamedata.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

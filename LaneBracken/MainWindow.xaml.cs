@@ -75,15 +75,18 @@ namespace LaneBracken
 
         private void buttonBuyCorn_Click(object sender, RoutedEventArgs e)
         {
-            int cost = 250;
+            int cost = 500;
+            int quantity = 2000;
+
+
             if (world.player.CanBuy(cost))
             {
-                world.Say("Purchased 4000 corn seeds for " + cost.ToString("C"));
+                world.Say("Purchased " + quantity + " corn seeds for " + cost.ToString("C"));
 
                 if (GameUtils.SearchListByName("Corn", world.Entities, out Entity entity))
                 {
                     Producer p = (Producer)entity;
-                    p.Seeds += 1000;
+                    p.Seeds += 2000;
                 }
 
                 UpdateInventoryDisplay();
