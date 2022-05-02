@@ -1,0 +1,89 @@
+﻿From canvas page for bracken cave
+Environment: Bracken Cave near San Antonio, Texas. 
+
+Biotic components:
+
+Producers
+	every few days, get "harvested" and make sellable product
+Cotton
+Corn
+
+Consumers
+Worm-Moth (Corn earworm/Cotton Bollworm, Helicoverpa zea)
+	cotton/corn worms harm cotton and corn. 
+	lay hundreds of eggs
+Bat (Brazilian free-tailed bats, Tadarida brasiliensis)
+	eat insects (worms? and beetles) , up to 4,000 in a night
+Hawk (Red-tailed hawks, Buteo jamaicensis)
+	hunt bats
+
+Decomposers
+Dermestid Beetle (Dermestes carnivora)
+	skin beetles: eat dead animal carcasses
+Guano Beetle (Jacobsoniidae)
+	eat guano ?? 
+
+Systems:
+ecosystem (producers/consumers/decomposers)
+and another system of your choice
+
+Player: uses elements to keep the ecosystem in balance
+
+resources:
+	money
+	cotton product - sellable
+	corn product - sellable
+	guano - sellable
+	carcasses
+
+
+Vendor: the player should be able to exchange items gathered in (or produced by) the environment for elements that can help keep the systems in balance.
+Example: guano, cotton, or corn could be harvested and traded for seeds to plant more crops, hawk deterrents (owl decoy or scarecrow), or other elements.
+	scarecrow: reduce hawks for x nights
+	seeds: add more corn/cotton
+	insecticide: kill worms
+	guano miners: hire to harvest guano for a few days?
+
+You could have prices fluctuate depending on other factors (such as weather).
+	rainy days make crops grow twice as fast? but make hawks and bats less effective (hard to fly in rain)
+
+Whatever you choose should have both positive and negative consequences. For example, if you sell all your crops the worm population could drop because they have lost their food source, which then could impact the bat population as they will no longer have enough worms to eat.
+Event handlers: notify when a critical element is out of balance.
+Example: Not enough cotton or corn to sustain the worm population to feed the bats.
+
+
+
+overall structure:
+text console- next day button.
+text box for stats and status
+
+each day, 
+set weather: sun / rain
+go through each entity and do their daily events: eat, count down reproduction/harvest timers
+
+
+
+class structure:
+
+entity - entities could be singletons to avoid making multiple instances. since amount will be a property.
+	producer
+		corn, 
+		cotton
+	consumer
+		corn worm
+		cotton worm
+		bat
+		hawk
+	decomposer
+		carnivore beetle
+		guano beetle
+
+item
+	scarecrow
+	crop products
+	miners
+	insecticide
+
+player:
+	owns items
+	uses vendor
