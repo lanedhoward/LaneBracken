@@ -17,6 +17,12 @@ namespace LaneBracken
         public int Amount;
         public bool HasEndStep = false;
 
+        public virtual void OnWorldInitialized()
+        {
+            World.GetWorld().EntityStep += Step;
+            World.GetWorld().EntityEndStep += EndStep;
+        }
+
         public abstract void Step();
 
         public virtual void EndStep()

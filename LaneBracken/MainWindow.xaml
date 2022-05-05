@@ -5,23 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaneBracken"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#FF470065">
+        Title="Lane's Bracken Cave Simulation" Height="450" Width="800" Background="#FF470065">
     <Grid>
-        <TextBox x:Name="tBoxOutput" Margin="10,10,333.6,175" TextWrapping="Wrap" Focusable="False" IsTabStop="False"/>
-        <TextBox x:Name="tBoxStatus" HorizontalAlignment="Left" Margin="10,250,0,10" TextWrapping="Wrap" Width="220" Focusable="False" IsTabStop="False"/>
-        <TextBox x:Name="tBoxInventory" Margin="240,250,333.6,10" TextWrapping="Wrap" Focusable="False" IsTabStop="False"/>
-        <Button x:Name="buttonNextDay" Content="Next Day" Margin="465,358,9.6,10" Click="buttonNextDay_Click"/>
+        <TextBox x:Name="tBoxOutput" Margin="10,10,334,0" TextWrapping="Wrap" Focusable="False" IsTabStop="False" Height="234" VerticalAlignment="Top"/>
+        <TextBox x:Name="tBoxStatus" HorizontalAlignment="Left" Margin="10,274,0,10" TextWrapping="Wrap" Width="220" Focusable="False" IsTabStop="False"/>
+        <TextBox x:Name="tBoxInventory" Margin="240,274,334,10" TextWrapping="Wrap" Focusable="False" IsTabStop="False"/>
+        <Button x:Name="buttonNextDay" Content="Next Day" Margin="471,358,10,10" Click="buttonNextDay_Click"/>
         <TextBlock Margin="583,10,0,0" TextWrapping="Wrap" Text="Shop" VerticalAlignment="Top" Background="White" HorizontalAlignment="Left" Width="87" FontSize="18" TextAlignment="Center"/>
-        <TextBlock Margin="480,42,0,0" TextWrapping="Wrap" Text="Corn" VerticalAlignment="Top" Background="White" HorizontalAlignment="Left" Width="71" TextAlignment="Center" FontSize="14"/>
-        <Button x:Name="buttonBuyCorn" Content="Buy Seeds" HorizontalAlignment="Left" Margin="559,42,0,0" VerticalAlignment="Top" Width="110" Click="buttonBuyCorn_Click"/>
-        <Button x:Name="buttonSellCorn" Content="Sell Product" HorizontalAlignment="Left" Margin="674,42,0,0" VerticalAlignment="Top" Width="110" Click="buttonSellCorn_Click"/>
-        <TextBlock Margin="480,73,0,0" TextWrapping="Wrap" Text="Cotton" VerticalAlignment="Top" Background="White" HorizontalAlignment="Left" Width="71" TextAlignment="Center" FontSize="14"/>
-        <Button x:Name="buttonBuyCotton" Content="Buy Seeds" HorizontalAlignment="Left" Margin="559,73,0,0" VerticalAlignment="Top" Width="110"/>
-        <Button x:Name="buttonSellCotton" Content="Sell Product" HorizontalAlignment="Left" Margin="674,73,0,0" VerticalAlignment="Top" Width="110"/>
-        <Button x:Name="buttonBuyScarecrow" Content="Buy Scarecrow" HorizontalAlignment="Left" Margin="480,111,0,0" VerticalAlignment="Top" Width="140" Height="57" Click="buttonBuyScarecrow_Click"/>
+        <TextBlock Margin="480,53,0,0" TextWrapping="Wrap" Text="Corn" VerticalAlignment="Top" Background="White" HorizontalAlignment="Left" Width="71" TextAlignment="Center" FontSize="14" Height="31" Padding="4"/>
+        <Button x:Name="buttonBuyCorn" Content="Buy Seeds" HorizontalAlignment="Left" Margin="565,52,0,0" VerticalAlignment="Top" Width="110" Click="buttonBuyCorn_Click" Height="32"/>
+        <Button x:Name="buttonSellCorn" Content="Sell Product" HorizontalAlignment="Left" Margin="680,52,0,0" VerticalAlignment="Top" Width="110" Click="buttonSellCorn_Click" Height="32"/>
+        <Button x:Name="buttonBuyScarecrow" Content="Buy Scarecrow" HorizontalAlignment="Left" Margin="480,111,0,0" VerticalAlignment="Top" Width="140" Height="57" Click="buttonBuyScarecrow_Click" Background="#FFDDDDDD"/>
         <Button x:Name="buttonBuyInsecticide" Content="Buy Insecticide" Margin="644,111,9.6,0" VerticalAlignment="Top" Height="57" Click="buttonBuyInsecticide_Click"/>
         <Button x:Name="buttonBuyMiners" Content="Hire Guano Miners" HorizontalAlignment="Left" Margin="480,182,0,0" VerticalAlignment="Top" Width="140" Height="57" Click="buttonBuyMiners_Click"/>
         <Button x:Name="buttonBuyWeatherMachine" Content="Use Weather Machine" Margin="644,182,9.6,0" VerticalAlignment="Top" Height="57" Click="buttonBuyWeatherMachine_Click"/>
+        <Button x:Name="buttonHelp" Content="?" Margin="741,318,10,0" Click="buttonHelp_Click" Height="35" VerticalAlignment="Top"/>
+        <TextBlock Margin="10,249,0,0" TextWrapping="Wrap" Text="Organisms" VerticalAlignment="Top" Background="White" HorizontalAlignment="Left" Width="220" TextAlignment="Center" FontSize="14" Height="20" Padding="0"/>
+        <TextBlock Margin="240,249,334,0" TextWrapping="Wrap" Text="Items" VerticalAlignment="Top" Background="White" TextAlignment="Center" FontSize="14" Height="20" Padding="0"/>
 
     </Grid>
 </Window>

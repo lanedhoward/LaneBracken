@@ -25,6 +25,15 @@ namespace LaneBracken
 
         public bool WeatherMachineOn = false;
 
+        private bool worldInit = false;
+
+        public delegate void WorldEvent();
+        public event WorldEvent WorldInitialized;
+        public event WorldEvent ItemStep;
+        public event WorldEvent EntityStep;
+        public event WorldEvent EntityEndStep;
+        
+
 
         private World()
         {
@@ -33,12 +42,37 @@ namespace LaneBracken
 
             Entities = GameUtils.LoadEntities("../../data/gamedata.xml");
 
+            foreach (Entity e in Entities)
+            {
+                // register them for world initialized event
+
+                // this will basically do anything that normally i would do in an entity constructor
+                // but an entity constructor cant reference GetWorld() because it causes a stack overflow
+                // since World() calls LoadEntities() which calls Entity() which would call GetWorld()
+                // which would stil have instance == null since World() hasn't finished yet 
+                // so it tries to call World() again in and endless loop
+
+                WorldInitialized += e.OnWorldInitialized;
+            }    
+
+            //RegisterExtinctionEvents();
+
             player = new Player();
         }
 
         public static World GetWorld()
         {
-            if (instance == null) instance = new World();
+            if (instance == null)
+            {
+                instance = new World();
+            }
+
+            if (instance.worldInit == false)
+            {
+                // just initialized world for the first time
+                instance.worldInit = true;
+                instance.WorldInitialized?.Invoke();
+            }
             return instance;
         }
 
@@ -53,10 +87,13 @@ namespace LaneBracken
             Say("********** The sun rises on day " + Day + "! **********");
 
             // do item steps
+            ItemStep?.Invoke();
+            /*
             foreach (Item item in player.Inventory)
             {
                 if (item.HasStep) item.Step();
             }
+            */
 
             // decide weather
             if (!WeatherMachineOn)
@@ -74,6 +111,9 @@ namespace LaneBracken
             }
 
             // do entity steps
+            EntityStep?.Invoke();
+            EntityEndStep?.Invoke();
+            /*
             // ideally this goes in order producer -> consumer -> decomposer, but i guess it doesn't really matter
             foreach(Entity e in Entities)
             {
@@ -87,6 +127,7 @@ namespace LaneBracken
                  e.EndStep();
                 
             }
+            */
         }
 
         private void SetWeather()
@@ -101,5 +142,24 @@ namespace LaneBracken
             TodaysWeather = newWeather;
         }
 
+        
+        private void RegisterExtinctionEvents()
+        {
+            
+            foreach (Entity e in Entities)
+            {
+                if (typeof(Consumer).IsAssignableFrom(e.GetType()))
+                {
+                    // if the entity is a consumer, register its extinction event
+                    Consumer c = (Consumer)e;
+                    c.Extinct += ExtinctionAlert;
+                }
+            }
+        }
+
+        public void ExtinctionAlert(object sender, ExtinctEventArgs e)
+        {
+            Say(e.Name + " has gone extinct. :( ");
+        }
     }
 }

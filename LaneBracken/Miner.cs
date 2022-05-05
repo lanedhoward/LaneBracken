@@ -14,7 +14,7 @@ namespace LaneBracken
         {
             Name = "Guano Miners";
             HasStep = true;
-            
+            World.GetWorld().ItemStep += Step;
         }
         
         public override void Step()

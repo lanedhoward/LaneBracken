@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="Consumer.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="ExtinctEventArgs.cs" />
     <Compile Include="GameUtils.cs" />
     <Compile Include="INameSearchable.cs" />
     <Compile Include="WeatherMachine.cs" />

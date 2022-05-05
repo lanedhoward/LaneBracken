@@ -12,7 +12,7 @@ namespace LaneBracken
         {
             Name = "Scarecrow";
             HasStep = true;
-            
+            World.GetWorld().ItemStep += Step;
         }
         
         public override void Step()

@@ -19,6 +19,20 @@ namespace LaneBracken
         public bool AffectedByScarecrow = false;
         public bool makesGuano = false;
 
+        
+        //extinction events
+        public event EventHandler<ExtinctEventArgs> Extinct;
+
+        public override void OnWorldInitialized()
+        {
+            base.OnWorldInitialized();
+            Extinct += World.GetWorld().ExtinctionAlert;
+        }
+        protected virtual void OnExtinct(ExtinctEventArgs e)
+        {
+            Extinct?.Invoke(this, e);
+        }
+
         public void Eat()
         {
             if (isFlying)
@@ -130,6 +144,8 @@ namespace LaneBracken
             else
             {
                 Say("We are extinct. No " + Name + " can reproduce.");
+                // call extinction event
+                OnExtinct(new ExtinctEventArgs(Name));
             }
 
             DaysToReproduction = DaysToReproductionMax;

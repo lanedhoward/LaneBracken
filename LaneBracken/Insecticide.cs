@@ -13,7 +13,7 @@ namespace LaneBracken
         {
             Name = "Insecticide";
             HasStep = true;
-            
+            World.GetWorld().ItemStep += Step;
         }
         
         public override void Step()

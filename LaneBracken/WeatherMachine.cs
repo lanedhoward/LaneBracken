@@ -13,7 +13,7 @@ namespace LaneBracken
         {
             Name = "Weather Machine";
             HasStep = true;
-            
+            World.GetWorld().ItemStep += Step;
         }
         
         public override void Step()
