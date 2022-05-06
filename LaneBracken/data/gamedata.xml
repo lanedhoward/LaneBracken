@@ -3,8 +3,10 @@
     </entity>
 	<entity type="Consumer" name="Corn Earworm" amount = "20000" diet="Corn" amountOfFoodForOne="0.015" minEatChance="0.73" daysToReproductionMax="2" reproductionRatio="2.3" isFlying="false">
     </entity>
-	<entity type="Consumer" name="Bat" amount = "200" diet="Corn Earworm" amountOfFoodForOne="30" minEatChance="0.8" daysToReproductionMax="4" reproductionRatio="2.9" isFlying="true" makesGuano="true">
+	<entity type="Consumer" name="Bat" amount = "200" diet="Corn Earworm" amountOfFoodForOne="30" minEatChance="0.8" daysToReproductionMax="4" reproductionRatio="3.1" isFlying="true" makesGuano="true">
     </entity>
 	<entity type="Consumer" name="Hawk" amount = "25" diet="Bat" amountOfFoodForOne="0.75" minEatChance="0.75" daysToReproductionMax="5" reproductionRatio="2.3" isFlying="true">
+	</entity>
+	<entity type="Decomposer" name="Guano Beetle" amount = "500" diet="Guano" amountOfFoodForOne="0.035" minEatChance="0.8" daysToReproductionMax="5" reproductionRatio="2" isFlying="false">
 	</entity>
 </environment>

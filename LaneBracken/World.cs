@@ -145,7 +145,7 @@ namespace LaneBracken
         
         private void RegisterExtinctionEvents()
         {
-            
+            // deprecated; entities register their own extinction with the world now.
             foreach (Entity e in Entities)
             {
                 if (typeof(Consumer).IsAssignableFrom(e.GetType()))

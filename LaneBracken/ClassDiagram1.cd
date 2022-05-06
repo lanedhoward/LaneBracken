@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="LaneBracken.Consumer">
+    <Position X="1" Y="4.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAGAAAEEgAEAAAAAAACAAAWAAYAAABIAAAAAQAAgA=</HashCode>
+      <FileName>Consumer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneBracken.Decomposer">
+    <Position X="4.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Decomposer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneBracken.Entity" Collapsed="true">
+    <Position X="4.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAABAAAAAAAAASAEIAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Entity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LaneBracken.GameUtils">
+    <Position X="12" Y="8.25" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>GameUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneBracken.Insecticide">
+    <Position X="1" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Insecticide.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneBracken.Item" Collapsed="true">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAASAAAAAAAAAIAAAQAAAAAA=</HashCode>
+      <FileName>Item.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LaneBracken.Miner">
+    <Position X="7.75" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABIAAIAAAAAAAAAA=</HashCode>
+      <FileName>Miner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneBracken.Player">
+    <Position X="9" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAgAAEAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneBracken.Producer">
+    <Position X="6" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>EAAQAAQAAAAAAAAMAAACAAAAAIAAAAIAKBAAAAAAAAA=</HashCode>
+      <FileName>Producer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneBracken.Scarecrow">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Scarecrow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneBracken.WeatherMachine">
+    <Position X="5.5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>WeatherMachine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneBracken.World" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="0.75" Width="3.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="LaneBracken.World.WorldEvent" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>World.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAIAAABAAgAAGAAAAAAABAIAABIAEBwQIAQAA=</HashCode>
+      <FileName>World.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LaneBracken.WPFUtils">
+    <Position X="13.75" Y="1" Width="3.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="LaneBracken.WPFUtils.PrintDelegate">
+        <TypeIdentifier>
+          <NewMemberFileName>WPFUtils.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgACAAAAQAAAAAQAAAAAABBEAAA=</HashCode>
+      <FileName>WPFUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneBracken.ExtinctEventArgs">
+    <Position X="4.25" Y="8.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ExtinctEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="LaneBracken.INameSearchable">
+    <Position X="9.75" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INameSearchable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LaneBracken.ISayable">
+    <Position X="7.75" Y="9" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ISayable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="LaneBracken.Weather">
+    <Position X="11.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>World.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -6,34 +6,10 @@ using System.Threading.Tasks;
 
 namespace LaneBracken
 {
-    public class Consumer : Entity
+    public class Decomposer : Consumer
     {
-        public string Diet;
-        public double AmountOfFoodForOne;
-        public double minEatChance = 0.75;
-        public double DailyEfficiency = 1.0; // can be reduced by world conditions
-        public int DaysToReproduction = -100;
-        public int DaysToReproductionMax;
-        public double ReproductionRatio; // ratio how many consumers before and after reproduction
-        public bool isFlying = false;
-        public bool AffectedByScarecrow = false;
-        public bool makesGuano = false;
-
-        
-        //extinction events
-        public event EventHandler<ExtinctEventArgs> Extinct;
-
-        public override void OnWorldInitialized()
-        {
-            base.OnWorldInitialized();
-            Extinct += World.GetWorld().ExtinctionAlert;
-        }
-        protected virtual void OnExtinct(ExtinctEventArgs e)
-        {
-            Extinct?.Invoke(this, e);
-        }
-
-        public virtual void Eat()
+        // decomposers are just like consumers but they eat items from the players Inventory, not entities from the world
+        public override void Eat()
         {
             if (Amount > 0)
             {
@@ -55,7 +31,7 @@ namespace LaneBracken
                         Say("We are too scared to hunt effectively.");
                     }
                 }
-                if (GameUtils.SearchListByName(Diet, World.GetWorld().Entities, out Entity food))
+                if (GameUtils.SearchListByName(Diet, World.GetWorld().player.Inventory, out Item food))
                 {
                     // eatPercent is a value between minEatChance and 1
                     double EatPercent = (minEatChance + GameUtils.random.NextDouble() * (1 - minEatChance)) * DailyEfficiency;
@@ -100,6 +76,7 @@ namespace LaneBracken
                         MakeGuano(guanoAmount);
 
                     }
+
                 }
             }
             else
@@ -109,56 +86,5 @@ namespace LaneBracken
             }
         }
 
-        protected void MakeGuano(int amt)
-        {
-            if (GameUtils.SearchListByName("Guano", World.GetWorld().player.Inventory, out Item item))
-            {
-                item.Amount += amt;
-            }
-            else
-            {
-                Item guano = new Item();
-                guano.Name = "Guano";
-                guano.Amount = amt;
-                World.GetWorld().player.Inventory.Add(guano);
-            }
-        }
-
-        public void HandleReproduction()
-        {
-            if (DaysToReproduction == -100) DaysToReproduction = DaysToReproductionMax;
-
-            DaysToReproduction -= 1;
-
-            //Say("Days till reproduction: " + Math.Max(DaysToReproduction, 0).ToString());
-
-            if (DaysToReproduction <= 0)
-            {
-                // reproduce
-                Reproduce();
-            }
-        }
-
-        public virtual void Reproduce()
-        {
-            if (Amount > 0)
-            {
-                int temp = Amount;
-                Amount = (int)Math.Ceiling(Amount * ReproductionRatio);
-
-                Say((Amount - temp) + " " + Name + " were born.");
-            }
-            
-
-            DaysToReproduction = DaysToReproductionMax;
-
-        }
-        public override void Step()
-        {
-            Eat();
-            HandleReproduction();
-
-
-        }
     }
 }

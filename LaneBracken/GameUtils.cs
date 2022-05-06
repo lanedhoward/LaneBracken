@@ -34,9 +34,17 @@ namespace LaneBracken
                         if (double.TryParse(entity.GetAttribute("survivalRate"), out double b)) { prod.SurvivalRate = b; }
 
                     }
-                    else if (entity.GetAttribute("type") == "Consumer")
+                    else if (entity.GetAttribute("type") == "Consumer" || entity.GetAttribute("type") == "Decomposer")
                     {
-                        temp = new Consumer();
+                        if (entity.GetAttribute("type") == "Decomposer")
+                        {
+                            temp = new Decomposer();
+                        }
+                        else
+                        {
+                            temp = new Consumer();
+                        }
+                        
                         Consumer cons = (Consumer)temp;
                         cons.Diet = entity.GetAttribute("diet");
                         if (double.TryParse(entity.GetAttribute("amountOfFoodForOne"), out double a)) { cons.AmountOfFoodForOne = a; }
@@ -46,11 +54,10 @@ namespace LaneBracken
                         if (bool.TryParse(entity.GetAttribute("isFlying"), out bool e)) { cons.isFlying = e; }
                         if (bool.TryParse(entity.GetAttribute("makesGuano"), out bool f)) { cons.makesGuano = f; }
 
+                        
+
                     }
-                    else if (entity.GetAttribute("type") == "Decomposer")
-                    {
-                        //temp = new Decomposer();
-                    }
+                    
 
                     if (temp != null)
                     {
